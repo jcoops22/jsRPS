@@ -2,6 +2,10 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+      rel="stylesheet"
+    />
     <title>JS RPS</title>
   </head>
   <body>
@@ -11,12 +15,15 @@
       <div class="btnDiv">
         <div id="rock">
           <img src="./resources/rock.svg" alt="rock" />
+          <span>Rock</span>
         </div>
         <div id="paper">
           <img src="./resources/paper.svg" alt="paper" />
+          <span id="paperspan">Paper</span>
         </div>
         <div id="scissors">
           <img src="./resources/scissors.svg" alt="scissors" />
+          <span>Scissors</span>
         </div>
       </div>
 
@@ -24,13 +31,17 @@
         <div class="userResultDiv">
           <p>You chose:</p>
           <div class="userResult">
-            <img src="" alt="users choice" />
+            <img
+              src="./resources/scissors.svg"
+              alt="users choice"
+              width="80px"
+            />
           </div>
         </div>
         <div class="computerResultDiv">
           <p>Computer puts:</p>
           <div class="computerResult">
-            <img src="" alt="computers choice" />
+            <img src="./resources/scissors.svg" alt="computers choice" />
           </div>
         </div>
       </div>

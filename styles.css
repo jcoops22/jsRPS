@@ -1,3 +1,9 @@
+* {
+  font-family: "Anton", sans-serif;
+  color: #af3e4d;
+}
+body {
+}
 h1 {
   text-align: center;
 }
@@ -8,12 +14,14 @@ h1 {
   transform: translate(-50%, -50%);
   height: 70vh;
   width: 70rem;
-  border: 1px solid black;
+  border: 0.2px solid black;
+  box-shadow: 2px 4px 8px #667;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #9cfffa;
 }
 .btnDiv {
   display: flex;
@@ -22,14 +30,22 @@ h1 {
 }
 .btnDiv img {
   width: 100px;
-  transition-delay: 0.2;
+  transition-duration: 0.4s;
+  transition-delay: 0.2s;
   padding: 4rem;
-  border: 1px solid black;
+  border: 0.2px solid black;
   border-radius: 8px;
 }
 .btnDiv img:hover {
-  box-shadow: none;
   transform: scale(0.8);
+  -webkit-box-shadow: -7px 0px 20px 3px rgba(169, 124, 115, 0.78);
+  -moz-box-shadow: -7px 0px 20px 3px rgba(169, 124, 115, 0.78);
+  box-shadow: -7px 0px 20px 3px rgba(169, 124, 115, 0.78);
+  border: none;
+  cursor: pointer;
+}
+.btnDiv span {
+  color: #a97c73;
 }
 .results {
   width: 100%;
@@ -44,7 +60,11 @@ h1 {
 }
 .computerResult img {
   visibility: hidden;
+  width: 100px;
+  margin: 20px;
 }
 .userResult img {
+  width: 100px;
+  margin: 20px;
   visibility: hidden;
 }
