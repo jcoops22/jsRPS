@@ -10,3 +10,14 @@
   border: 1px solid black;
   border-radius: 8px;
 }
+
+.btnDiv {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sp { padding: 5rem; }
