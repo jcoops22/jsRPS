@@ -36,7 +36,6 @@ h1 {
   margin: 0 2em;
   animation-iteration-count: infinite;
   animation-duration: 3s;
-  display: inline;
 }
 .btnDiv img:hover {
   transform: scale(1.1);
