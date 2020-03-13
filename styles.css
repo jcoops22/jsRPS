@@ -32,9 +32,13 @@ h1 {
   width: 100px;
   transition-duration: 0.4s;
   transition-delay: 0.2s;
-  padding: 4rem;
+  padding: 2rem;
+  margin: 2em;
   border: 0.2px solid black;
-  border-radius: 8px;
+  border-radius: 40%;
+  animation-name: flasher;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
 }
 .btnDiv img:hover {
   transform: scale(0.8);
@@ -43,6 +47,7 @@ h1 {
   box-shadow: -7px 0px 20px 3px rgba(169, 124, 115, 0.78);
   border: none;
   cursor: pointer;
+  animation-name: none;
 }
 .btnDiv span {
   color: #a97c73;
@@ -67,4 +72,18 @@ h1 {
   width: 100px;
   margin: 20px;
   visibility: hidden;
+}
+@keyframes flasher {
+  0% {
+    border-top: 1px solid #a97c73;
+  }
+  25% {
+    border-right: 1px solid #a97c73;
+  }
+  75% {
+    border-bottom: 1px solid #a97c73;
+  }
+  100% {
+    border-left: 1px solid #a97c73;
+  }
 }
