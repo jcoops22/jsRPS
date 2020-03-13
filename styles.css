@@ -3,16 +3,16 @@
   color: #af3e4d;
 }
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(232, 229, 200);
 }
 h1 {
   text-align: center;
+  margin-bottom: 4rem;
 }
 .container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 70vh;
   width: 70rem;
   border: 0.2px solid black;
   box-shadow: 2px 4px 8px #667;
@@ -31,21 +31,15 @@ h1 {
 .btnDiv img {
   width: 100px;
   transition-duration: 0.4s;
-  transition-delay: 0.2s;
   padding: 2rem;
   margin: 2em;
-  border: 0.2px solid black;
+  /* border: 1px solid black; */
   border-radius: 40%;
-  animation-name: flasher;
   animation-iteration-count: infinite;
   animation-duration: 3s;
 }
 .btnDiv img:hover {
-  transform: scale(0.8);
-  -webkit-box-shadow: -7px 0px 20px 3px rgba(169, 124, 115, 0.78);
-  -moz-box-shadow: -7px 0px 20px 3px rgba(169, 124, 115, 0.78);
-  box-shadow: -7px 0px 20px 3px rgba(169, 124, 115, 0.78);
-  border: none;
+  transform: scale(1.1);
   cursor: pointer;
   animation-name: none;
 }
@@ -61,7 +55,7 @@ h1 {
 .userResultDiv,
 .computerResultDiv {
   display: flex;
-  /* border: 1px solid red; */
+  /* border: 1px solid black; */
 }
 .computerResult img {
   visibility: hidden;
@@ -72,18 +66,4 @@ h1 {
   width: 100px;
   margin: 20px;
   visibility: hidden;
-}
-@keyframes flasher {
-  0% {
-    border-top: 1px solid #a97c73;
-  }
-  25% {
-    border-right: 1px solid #a97c73;
-  }
-  75% {
-    border-bottom: 1px solid #a97c73;
-  }
-  100% {
-    border-left: 1px solid #a97c73;
-  }
 }
