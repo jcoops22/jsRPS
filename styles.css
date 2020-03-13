@@ -1,0 +1,12 @@
+
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 17rem; 
+  width: 40rem;
+  border: 1px solid black;
+  border-radius: 8px;
+}
