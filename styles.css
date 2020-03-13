@@ -1,23 +1,33 @@
-
-
 .container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 17rem; 
+  height: 17rem;
   width: 40rem;
   border: 1px solid black;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
 .btnDiv {
   display: flex;
-  flex-direction: row;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: space-evenly;
+  width: 100%;
 }
-
-.sp { padding: 5rem; }
+.btnDiv img {
+  width: 100px;
+}
+.results {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 1rem;
+}
+.userResultDiv,
+.computerResultDiv {
+  display: flex;
+  border: 1px solid red;
+}

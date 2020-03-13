@@ -2,29 +2,35 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css" />
+    <title>JS RPS</title>
   </head>
   <body>
+    <h1>Javascript RPS</h1>
     <div class="container">
       <div class="btnDiv">
-        <div class='sp' id="rock">
-          <button>rock</button>
+        <div id="rock">
+          <img src="./resources/rock.svg" alt="rock" />
         </div>
-        <div class='sp' id="paper">
-          <button>paper</button>
+        <div id="paper">
+          <img src="./resources/paper.svg" alt="paper" />
         </div>
-        <div class='sp' id="scissors">
-          <button>scissor</button>
+        <div id="scissors">
+          <img src="./resources/scissors.svg" alt="scissors" />
         </div>
       </div>
 
-      <div id="results">
+      <div class="results">
         <div class="userResultDiv">
           <p>You chose:</p>
-          <div class="userResult"></div>
+          <div class="userResult">
+            <img src="" alt="users choice" />
+          </div>
         </div>
         <div class="computerResultDiv">
           <p>Computer puts:</p>
-          <div class="computerResult"></div>
+          <div class="computerResult">
+            <img src="" alt="computers choice" />
+          </div>
         </div>
       </div>
     </div>
