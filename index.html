@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class='container'>
-      
+    <div class="container">
+      <div class="btnDiv">
+        <div id="rock"></div>
+        <div id="paper"></div>
+        <div id="scissors"></div>
+      </div>
+
+      <div id="results">
+        <div class="userResultDiv">
+          <p>You chose:</p>
+          <div class="userResult"></div>
+        </div>
+        <div class="computerResultDiv">
+          <p>Computer puts:</p>
+          <div class="computerResult"></div>
+        </div>
+      </div>
     </div>
-    <script src='logic.js'></script>
+    <script src="logic.js"></script>
   </body>
 </html>
