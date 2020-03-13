@@ -23,9 +23,11 @@ h1 {
 .btnDiv img {
   width: 100px;
   transition-delay: 0.2;
-  padding: 4rem;
+  padding: 2rem;
+  margin: 1rem;
   border: 1px solid black;
   border-radius: 8px;
+  cursor: pointer;
 }
 .btnDiv img:hover {
   box-shadow: none;
@@ -40,11 +42,10 @@ h1 {
 .userResultDiv,
 .computerResultDiv {
   display: flex;
-  /* border: 1px solid red; */
 }
 .computerResult img {
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 .userResult img {
-  visibility: hidden;
+  /* visibility: hidden; */
 }
