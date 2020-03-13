@@ -1,10 +1,13 @@
+h1 {
+  text-align: center;
+}
 .container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 17rem;
-  width: 40rem;
+  height: 70vh;
+  width: 70rem;
   border: 1px solid black;
   border-radius: 8px;
   display: flex;
@@ -19,6 +22,14 @@
 }
 .btnDiv img {
   width: 100px;
+  transition-delay: 0.2;
+  padding: 4rem;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+.btnDiv img:hover {
+  box-shadow: none;
+  transform: scale(0.8);
 }
 .results {
   width: 100%;
@@ -29,5 +40,11 @@
 .userResultDiv,
 .computerResultDiv {
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+.computerResult img {
+  visibility: hidden;
+}
+.userResult img {
+  visibility: hidden;
 }
