@@ -84,3 +84,20 @@ h1 {
 .results p {
   font-size: 23px;
 }
+#winnerDiv {
+  display: none;
+  position: absolute;
+  top: 20vh;
+  left: 28rem;
+  flex-direction: column;
+  align-items: center;
+  height: 35vh;
+  width: 35vw;
+  border: 4px solid #af3e4d;
+  background-color: #a97c73;
+}
+#winnerDiv div {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}

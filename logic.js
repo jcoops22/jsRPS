@@ -7,7 +7,11 @@ let userResultValue = "";
 let computerResultValue = "";
 let userScore = 0;
 let computerScore = 0;
+let winnerDiv = document.querySelector("#winnerDiv");
+let announcement = document.querySelector("#winnerDiv h1");
 let winner = 0;
+let yesBtn = document.querySelector("#yes");
+let noBtn = document.querySelector("#no");
 
 // images to populate selection area
 let images = [
@@ -52,30 +56,55 @@ scissors.addEventListener("click", () => {
   computerSelection();
   findWinner(userResultValue, computerResultValue);
 });
+yesBtn.addEventListener("click", () => {
+  reset();
+  winnerDiv.style.display = "none";
+});
+noBtn.addEventListener("click", () => {
+  winnerDiv.style.display = "none";
+});
 
 // determine winner function
 function findWinner(user, computer) {
   if (user == "rock" && computer == "paper") {
     winner = 2;
     console.log("you lost");
+    handleWinner();
   } else if (user == "rock" && computer == "scissors") {
     winner = 1;
     console.log("you WON!!");
+    handleWinner();
   } else if (user == "paper" && computer == "scissors") {
     winner = 2;
     console.log("you lost");
+    handleWinner();
   } else if (user == "paper" && computer == "rock") {
     winner = 1;
     console.log("you WON!!");
+    handleWinner();
   } else if (user == "scissors" && computer == "rock") {
     winner = 2;
     console.log("you lost");
+    handleWinner();
   } else if (user == "scissors" && computer == "paper") {
     winner = 1;
     console.log("you WON!!");
+    handleWinner();
   } else {
     winner = 0;
     console.log("Its a tie");
+    handleWinner();
+  }
+}
+
+function handleWinner() {
+  winnerDiv.style.display = "flex";
+  if (winner === 2) {
+    announcement.innerHTML = "You lose.";
+  } else if (winner === 1) {
+    announcement.innerHTML = "You WIN!";
+  } else {
+    announcement.innerHTML = "Its a tie.";
   }
 }
 
@@ -89,4 +118,10 @@ function computerSelection() {
 function showChoices() {
   userResult.style.visibility = "visible";
   computerResult.style.visibility = "visible";
+}
+
+function reset() {
+  winner = 0;
+  userResult.style.visibility = "hidden";
+  computerResult.style.visibility = "hidden";
 }
