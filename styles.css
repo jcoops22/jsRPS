@@ -1,19 +1,27 @@
+* {
+  font-family: "Anton", sans-serif;
+  color: #af3e4d;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(232, 229, 200);
+}
 h1 {
   text-align: center;
+  margin-bottom: 4rem;
 }
 .container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 70vh;
   width: 70rem;
-  border: 1px solid black;
+  border: 0.2px solid black;
+  box-shadow: 2px 4px 8px #667;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #9cfffa;
 }
 .btnDiv {
   display: flex;
@@ -22,16 +30,21 @@ h1 {
 }
 .btnDiv img {
   width: 100px;
-  transition-delay: 0.2;
+  transition-duration: 0.4s;
   padding: 2rem;
-  margin: 1rem;
-  border: 1px solid black;
-  border-radius: 8px;
-  cursor: pointer;
+  margin: 2em;
+  /* border: 1px solid black; */
+  border-radius: 40%;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
 }
 .btnDiv img:hover {
-  box-shadow: none;
-  transform: scale(0.8);
+  transform: scale(1.1);
+  cursor: pointer;
+  animation-name: none;
+}
+.btnDiv span {
+  color: #a97c73;
 }
 .results {
   width: 100%;
@@ -42,10 +55,15 @@ h1 {
 .userResultDiv,
 .computerResultDiv {
   display: flex;
+  /* border: 1px solid black; */
 }
 .computerResult img {
-  /* visibility: hidden; */
+  visibility: hidden;
+  width: 100px;
+  margin: 20px;
 }
 .userResult img {
-  /* visibility: hidden; */
+  width: 100px;
+  margin: 20px;
+  visibility: hidden;
 }
