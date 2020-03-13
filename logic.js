@@ -1,3 +1,6 @@
+let userScoreSpan = document.querySelector("#userScore");
+let computerScoreSpan = document.querySelector("#computerScore");
+let scoreLimitSpan = document.querySelector("#scoreLimit");
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissors = document.querySelector("#scissors");
@@ -7,9 +10,11 @@ let userResultValue = "";
 let computerResultValue = "";
 let userScore = 0;
 let computerScore = 0;
+let scoreLimit = 10;
 let winnerDiv = document.querySelector("#winnerDiv");
 let announcement = document.querySelector("#winnerDiv h1");
 let winner = 0;
+let gameOver = false;
 let yesBtn = document.querySelector("#yes");
 let noBtn = document.querySelector("#no");
 
@@ -28,6 +33,11 @@ let images = [
     value: "scissors"
   }
 ];
+
+// start the game
+startGame();
+
+// Events Listeners
 
 // Click Event to set user selection
 rock.addEventListener("click", () => {
@@ -64,6 +74,13 @@ noBtn.addEventListener("click", () => {
   winnerDiv.style.display = "none";
 });
 
+// Functions
+
+// start the game function
+function startGame() {
+  scoreLimit = prompt("What score limit do you want to go to?");
+  scoreLimitSpan.innerHTML = scoreLimit;
+}
 // determine winner function
 function findWinner(user, computer) {
   if (user == "rock" && computer == "paper") {
@@ -98,11 +115,16 @@ function findWinner(user, computer) {
 }
 
 function handleWinner() {
-  winnerDiv.style.display = "flex";
   if (winner === 2) {
     announcement.innerHTML = "You lose.";
+    computerScore++;
+    computerScoreSpan.innerHTML = computerScore;
+    keepGoing(computerScore);
   } else if (winner === 1) {
     announcement.innerHTML = "You WIN!";
+    userScore++;
+    userScoreSpan.innerHTML = userScore;
+    keepGoing(userScore);
   } else {
     announcement.innerHTML = "Its a tie.";
   }
@@ -119,9 +141,19 @@ function showChoices() {
   userResult.style.visibility = "visible";
   computerResult.style.visibility = "visible";
 }
-
+function keepGoing(score) {
+  score >= scoreLimit ? (gameOver = true) : (gameOver = false);
+  if (gameOver) {
+    winnerDiv.style.display = "flex";
+  } else {
+    console.log("keep it going");
+  }
+}
 function reset() {
   winner = 0;
+  userScore = 0;
+  computerScore = 0;
   userResult.style.visibility = "hidden";
   computerResult.style.visibility = "hidden";
+  startGame();
 }
