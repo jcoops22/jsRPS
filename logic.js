@@ -73,11 +73,8 @@ scissors.addEventListener("click", () => {
 });
 yesBtn.addEventListener("click", () => {
   reset();
-  winnerDiv.style.display = "none";
 });
-noBtn.addEventListener("click", () => {
-  winnerDiv.style.display = "none";
-});
+noBtn.addEventListener("click", () => {});
 
 // Functions
 
@@ -151,7 +148,8 @@ function showChoices() {
 function keepGoing(score) {
   score >= scoreLimit ? (gameOver = true) : (gameOver = false);
   if (gameOver) {
-    winnerDiv.style.display = "flex";
+    winnerDiv.style.top = "38vh";
+    modal.style.display = "block";
   } else {
     console.log("keep it going");
   }
@@ -168,4 +166,5 @@ function reset() {
   computerResult.style.visibility = "hidden";
   startDiv.style.display = "flex";
   modal.style.display = "block";
+  winnerDiv.style.top = "-48vh";
 }

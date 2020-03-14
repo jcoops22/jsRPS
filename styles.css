@@ -13,6 +13,9 @@ h1 {
   margin-bottom: 4rem;
   font-size: 40px;
 }
+button {
+  cursor: pointer;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -48,6 +51,22 @@ h1 {
 }
 #gameStartDiv p {
   color: black;
+}
+#gameStartDiv input {
+  height: 25px;
+}
+#start {
+  width: 80px;
+  height: 40px;
+  transition-duration: 0.3s;
+  padding: 0;
+  border: 2px solid rgb(232, 229, 200);
+  border-radius: 8px;
+  font-size: 18px;
+}
+#start:hover {
+  background-color: #af3e4d;
+  color: rgb(232, 229, 200);
 }
 .scoreDiv {
   display: flex;
@@ -119,19 +138,23 @@ h1 {
   font-size: 23px;
 }
 #winnerDiv {
-  display: none;
+  display: flex;
   position: absolute;
-  top: 20vh;
-  left: 28rem;
+  top: -48vh;
   flex-direction: column;
   align-items: center;
-  height: 35vh;
+  height: 38vh;
   width: 35vw;
   border: 4px solid #af3e4d;
-  background-color: #a97c73;
+  background-color: rgb(232, 229, 200);
+  transition-duration: 0.5s;
 }
 #winnerDiv div {
   width: 40%;
   display: flex;
   justify-content: space-around;
+}
+#winnerDiv button {
+  height: 40px;
+  width: 60px;
 }
