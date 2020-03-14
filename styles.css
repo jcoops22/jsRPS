@@ -18,12 +18,36 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-width: 40rem;
   width: 70rem;
   padding: 20px;
   border: 0.2px solid black;
   box-shadow: 2px 4px 8px #667;
   border-radius: 8px;
   background-color: #9cfffa;
+}
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+  opacity: 0.7;
+}
+#gameStartDiv {
+  position: absolute;
+  top: 40%;
+  background-color: #af3e4d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+  width: 40%;
+  border: 6px solid black;
+  border-radius: 20px;
+}
+#gameStartDiv p {
+  color: black;
 }
 .scoreDiv {
   display: flex;

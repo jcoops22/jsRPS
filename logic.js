@@ -1,6 +1,10 @@
 let userScoreSpan = document.querySelector("#userScore");
 let computerScoreSpan = document.querySelector("#computerScore");
 let scoreLimitSpan = document.querySelector("#scoreLimit");
+let modal = document.querySelector(".modal");
+let start = document.querySelector("#start");
+let startDiv = document.querySelector("#gameStartDiv");
+let startDivInput = document.querySelector("#gameStartDiv input");
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissors = document.querySelector("#scissors");
@@ -10,7 +14,7 @@ let userResultValue = "";
 let computerResultValue = "";
 let userScore = 0;
 let computerScore = 0;
-let scoreLimit = 10;
+let scoreLimit = startDivInput.value;
 let winnerDiv = document.querySelector("#winnerDiv");
 let announcement = document.querySelector("#winnerDiv h1");
 let winner = 0;
@@ -34,11 +38,12 @@ let images = [
   }
 ];
 
-// start the game
-startGame();
-
 // Events Listeners
 
+// start the game
+start.addEventListener("click", () => {
+  startGame();
+});
 // Click Event to set user selection
 rock.addEventListener("click", () => {
   console.log("rock  clicked");
@@ -78,7 +83,9 @@ noBtn.addEventListener("click", () => {
 
 // start the game function
 function startGame() {
-  scoreLimit = prompt("What score limit do you want to go to?");
+  startDiv.style.display = "none";
+  modal.style.display = "none";
+  scoreLimit = startDivInput.value;
   scoreLimitSpan.innerHTML = scoreLimit;
 }
 // determine winner function
@@ -151,9 +158,14 @@ function keepGoing(score) {
 }
 function reset() {
   winner = 0;
+  scoreLimit = 0;
+  startDivInput.value = "";
   userScore = 0;
+  userScoreSpan.innerHTML = userScore;
   computerScore = 0;
+  computerScoreSpan.innerHTML = computerScore;
   userResult.style.visibility = "hidden";
   computerResult.style.visibility = "hidden";
-  startGame();
+  startDiv.style.display = "flex";
+  modal.style.display = "block";
 }
