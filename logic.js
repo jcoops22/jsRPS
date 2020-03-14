@@ -166,5 +166,5 @@ function reset() {
   computerResult.style.visibility = "hidden";
   startDiv.style.display = "flex";
   modal.style.display = "block";
-  winnerDiv.style.top = "-49vh";
+  winnerDiv.style.top = "-43vh";
 }
