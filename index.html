@@ -10,6 +10,7 @@
   </head>
   <body>
     <h1>Javascript RPS</h1>
+    
     <div class="container">
       <p>Make your choice:</p>
       <div class="btnDiv">
@@ -27,24 +28,14 @@
         </div>
       </div>
 
-      <div class="results">
-        <div class="userResultDiv">
-          <p>You chose:</p>
-          <div class="userResult">
-            <img
-              src="./resources/scissors.svg"
-              alt="users choice"
-              width="80px"
-            />
-          </div>
-        </div>
-        <div class="computerResultDiv">
-          <p>Computer puts:</p>
-          <div class="computerResult">
-            <img src="./resources/scissors.svg" alt="computers choice" />
-          </div>
-        </div>
+      <div class='game-scores' id='game-scores'>
+        <div class='score'>Player</div>
+        <span class='score' id='player'>0</span> <span class='score'>:</span> 
+        <div class='score'>Terminator</div>
+        <span class='score' id='terminator'>0</span>
+        <br>
       </div>
+      <p id='win-msg'>Who will win?</p>
     </div>
     <script src="logic.js"></script>
   </body>
