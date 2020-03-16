@@ -113,6 +113,10 @@ button {
   height: 80px;
   font-size: 28px;
 }
+#userScore,
+#computerScore {
+  transition-duration: 0.7s;
+}
 .btnDiv {
   display: flex;
   justify-content: space-evenly;
@@ -138,6 +142,7 @@ button {
 .btnDiv span {
   transition-duration: 0.4s;
   color: #a97c73;
+  /* color: #af3e4d; */
   opacity: 0;
 }
 #makeChoice {
@@ -152,6 +157,12 @@ button {
 }
 #scissors:hover span {
   opacity: 1;
+}
+#rock,
+#paper,
+#scissors span {
+  position: relative;
+  z-index: 1;
 }
 .results {
   width: 100%;
@@ -227,5 +238,24 @@ button {
   }
   to {
     top: 40%;
+  }
+}
+
+.shineClass {
+  animation-name: shine;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 2;
+}
+
+@keyframes shine {
+  30% {
+    color: #af3e4d;
+  }
+  60% {
+    color: rgb(232, 229, 200);
+  }
+  90% {
+    color: #a97c73;
   }
 }
