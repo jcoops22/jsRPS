@@ -5,16 +5,19 @@ let modal = document.querySelector(".modal");
 let start = document.querySelector("#start");
 let startDiv = document.querySelector("#gameStartDiv");
 let startDivInput = document.querySelector("#gameStartDiv input");
+let btnDivImages = document.querySelectorAll(".btnDiv div img");
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissors = document.querySelector("#scissors");
 let userResult = document.querySelector(".userResult img");
 let computerResult = document.querySelector(".computerResult img");
+let previewDiv = document.querySelector("#preview");
+let preview = document.querySelector("#preview img");
 let userResultValue = "";
 let computerResultValue = "";
 let userScore = 0;
 let computerScore = 0;
-let scoreLimit = startDivInput.value;
+let scoreLimit = startDivInput.value || 0;
 let winnerDiv = document.querySelector("#winnerDiv");
 let announcement = document.querySelector("#winnerDiv h1");
 let winner = 0;
@@ -39,11 +42,26 @@ let images = [
 ];
 
 // Events Listeners
-
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    startDivInput.focus();
+  }, 600);
+});
 // start the game
 start.addEventListener("click", () => {
   startGame();
 });
+
+// add background image on hover
+btnDivImages.forEach(img => {
+  img.addEventListener("mouseover", e => {
+    preview.src = e.target.src;
+  });
+  img.addEventListener("mouseout", e => {
+    preview.src = "";
+  });
+});
+
 // Click Event to set user selection
 rock.addEventListener("click", () => {
   console.log("rock  clicked");
@@ -53,7 +71,6 @@ rock.addEventListener("click", () => {
   computerSelection();
   findWinner(userResultValue, computerResultValue);
 });
-
 paper.addEventListener("click", () => {
   console.log("paper clicked");
   userResult.src = images[1].image;
@@ -81,7 +98,9 @@ noBtn.addEventListener("click", () => {});
 // start the game function
 function startGame() {
   startDiv.style.display = "none";
-  modal.style.display = "none";
+  // modal.style.display = "none";
+  modal.style.opacity = "0";
+  modal.style.zIndex = "0";
   scoreLimit = startDivInput.value;
   scoreLimitSpan.innerHTML = scoreLimit;
 }
@@ -143,13 +162,16 @@ function computerSelection() {
 // show the results from user and computer
 function showChoices() {
   userResult.style.visibility = "visible";
+  userResult.style.opacity = "1";
   computerResult.style.visibility = "visible";
+  computerResult.style.opacity = "1";
 }
 function keepGoing(score) {
   score >= scoreLimit ? (gameOver = true) : (gameOver = false);
   if (gameOver) {
-    winnerDiv.style.top = "38vh";
-    modal.style.display = "block";
+    winnerDiv.style.top = "25vh";
+    modal.style.opacity = ".7";
+    modal.style.zIndex = "3";
   } else {
     console.log("keep it going");
   }
@@ -163,8 +185,14 @@ function reset() {
   computerScore = 0;
   computerScoreSpan.innerHTML = computerScore;
   userResult.style.visibility = "hidden";
+  userResult.style.opacity = "0";
   computerResult.style.visibility = "hidden";
+  computerResult.style.opacity = "0";
   startDiv.style.display = "flex";
   modal.style.display = "block";
-  winnerDiv.style.top = "-43vh";
+  winnerDiv.style.top = "-53vh";
+  modal.style.opacity = ".7";
+  setTimeout(() => {
+    startDivInput.focus();
+  }, 600);
 }

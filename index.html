@@ -12,17 +12,19 @@
     <div class="modal"></div>
     <div id="gameStartDiv">
       <p>What score limit do you want to go to?</p>
-      <input type="number" placeholder="enter score limit" />
+      <input type="number" />
       <button id="start">Start</button>
     </div>
-    <h1>Javascript RPS</h1>
+
+    <h1>Javascript R<span>ock</span>P<span>aper</span>S<span>cissors</span></h1>
     <div class="container">
       <div class="scoreDiv">
         <p>Your Score: <span id="userScore">0</span></p>
         <p>Score Limit: <span id="scoreLimit"></span></p>
         <p>Computer Score: <span id="computerScore">0</span></p>
       </div>
-      <p>Make your choice:</p>
+      <p id="makeChoice">Make your choice:</p>
+
       <div class="btnDiv">
         <div id="rock">
           <img src="./resources/rock.svg" alt="rock" />
@@ -37,7 +39,6 @@
           <span>Scissors</span>
         </div>
       </div>
-
       <div class="results">
         <div class="userResultDiv">
           <p>You chose:</p>
@@ -55,6 +56,9 @@
             <img src="./resources/scissors.svg" alt="computers choice" />
           </div>
         </div>
+      </div>
+      <div id="preview">
+        <img src="" alt="" />
       </div>
       <div id="winnerDiv">
         <h1></h1>
