@@ -10,7 +10,7 @@ body {
 }
 h1 {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   font-size: 40px;
 }
 h1 span {
@@ -27,7 +27,6 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-width: 40rem;
   width: 70rem;
   padding: 20px;
   border: 0.2px solid black;
@@ -38,11 +37,10 @@ button {
 #preview {
   position: absolute;
   top: 25%;
-  left: 2.6%;
   height: 70vh;
   width: 70rem;
   z-index: 0;
-  opacity: 0.2;
+  opacity: 0.3;
   background-color: #9cfffa;
   transition-duration: 0.7s;
 }
@@ -50,7 +48,7 @@ button {
   position: relative;
   width: 30rem;
   transition-duration: 0.3s;
-  left: 28rem;
+  left: 20rem;
 }
 .modal {
   position: absolute;
@@ -113,6 +111,7 @@ button {
 .scoreDiv span {
   width: 80px;
   height: 80px;
+  font-size: 28px;
 }
 .btnDiv {
   display: flex;
@@ -196,6 +195,10 @@ button {
   transition-duration: 0.5s;
   border-radius: 8px;
   z-index: 3;
+}
+.pop {
+  position: absolute;
+  top: 130vh;
 }
 #winnerDiv div {
   width: 40%;

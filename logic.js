@@ -150,6 +150,7 @@ function handleWinner() {
     keepGoing(userScore);
   } else {
     announcement.innerHTML = "Its a tie.";
+    keepGoing(userScore);
   }
 }
 
@@ -173,7 +174,13 @@ function keepGoing(score) {
     modal.style.opacity = ".7";
     modal.style.zIndex = "3";
   } else {
-    console.log("keep it going");
+    preview.src = "./resources/shoot.svg";
+    announcement.classList.add("pop");
+    // flash results
+    setTimeout(() => {
+      preview.src = "";
+      announcement.classList.remove("pop");
+    }, 1000);
   }
 }
 function reset() {
