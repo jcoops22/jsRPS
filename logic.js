@@ -188,7 +188,14 @@ function keepGoing(score) {
     modal.style.opacity = ".7";
     modal.style.zIndex = "3";
   } else {
-    preview.src = "./resources/shoot.svg";
+    // preview.src = "./resources/shoot.svg";
+    if (winner == 1) {
+      preview.src = "./resources/shoot.svg";
+    } else if (winner == 2) {
+      preview.src = "./resources/shoot1.svg";
+    } else {
+      preview.src = "./resources/draw.svg";
+    }
     announcement.classList.add("pop");
     // flash results
     setTimeout(() => {
