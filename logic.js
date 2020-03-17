@@ -91,7 +91,9 @@ scissors.addEventListener("click", () => {
 yesBtn.addEventListener("click", () => {
   reset();
 });
-noBtn.addEventListener("click", () => {});
+noBtn.addEventListener("click", () => {
+  winnerDiv.style.top = "-53vh";
+});
 
 // Functions
 
