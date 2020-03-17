@@ -12,25 +12,133 @@ body {
 
 h1 {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   font-size: 40px;
 }
 
+h1 span {
+  font-size: 12px;
+}
+
+h1 span:nth-child(2) {
+  margin-left: -8px;
+}
+
+button {
+  cursor: pointer;
+}
+
 .container {
-  width: 70rem;
-  border: 0.2px solid black;
-  box-shadow: 2px 4px 8px #667;
-  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 70rem;
+  padding: 20px;
+  border: 0.2px solid black;
+  box-shadow: 2px 4px 8px #667;
+  border-radius: 8px;
   background-color: #9cfffa;
+}
+
+#preview {
+  position: absolute;
+  top: 25%;
+  height: 70vh;
+  width: 70rem;
+  z-index: 0;
+  opacity: 0.3;
+  background-color: #9cfffa;
+  transition-duration: 0.7s;
+}
+
+#preview img {
+  position: relative;
+  width: 30rem;
+  transition-duration: 0.3s;
+  left: 20rem;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+  opacity: 0.7;
+  transition-duration: 0.7s;
+  z-index: 3;
+}
+
+#gameStartDiv {
+  position: absolute;
+  top: 40%;
+  z-index: 4;
+  background-color: #af3e4d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
+  width: 40%;
+  border: 6px solid black;
+  border-radius: 20px;
+  animation-name: slideUp;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+#gameStartDiv p {
+  color: black;
+  font-size: 20px;
+}
+
+#gameStartDiv input {
+  height: 25px;
+  width: 55px;
+  font-size: 24px;
+}
+
+#start {
+  width: 80px;
+  height: 40px;
+  transition-duration: 0.3s;
+  padding: 0;
+  border: 2px solid rgb(232, 229, 200);
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+#start:hover {
+  background-color: #af3e4d;
+  color: rgb(232, 229, 200);
+}
+
+.scoreDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.scoreDiv p {
+  position: relative;
+  z-index: 2;
+}
+
+.scoreDiv span {
+  width: 80px;
+  height: 80px;
+  font-size: 28px;
+}
+
+#userScore,
+#computerScore {
+  transition-duration: 0.7s;
 }
 
 .game-scores {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   padding-bottom: 1rem;
 }
 
@@ -44,22 +152,22 @@ h1 {
   width: 100%;
 }
 
-img { outline: none; }
+img {
+  outline: none;
+}
 
 .btnDiv img {
+  position: relative;
+  z-index: 2;
   width: 100px;
   transition-duration: 0.4s;
   padding: 0.7rem;
   margin: 0 2em;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  display: inline;
 }
 
 .btnDiv img:hover {
   transform: scale(1.1);
   cursor: pointer;
-  animation-name: none;
 }
 
 .btnDiv div {
@@ -71,7 +179,13 @@ img { outline: none; }
 .btnDiv span {
   transition-duration: 0.4s;
   color: #a97c73;
+  /* color: #af3e4d; */
   opacity: 0;
+}
+
+#makeChoice {
+  position: relative;
+  z-index: 1;
 }
 
 #rock:hover span {
@@ -86,11 +200,20 @@ img { outline: none; }
   opacity: 1;
 }
 
+#rock,
+#paper,
+#scissors span {
+  position: relative;
+  z-index: 1;
+}
+
 .results {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin: 2rem 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .userResultDiv,
@@ -102,14 +225,93 @@ img { outline: none; }
   visibility: hidden;
   width: 100px;
   margin: 20px;
+  transition-duration: 0.4s;
+  opacity: 0;
 }
 
 .userResult img {
   width: 100px;
   margin: 20px;
   visibility: hidden;
+  transition-duration: 0.4s;
+  opacity: 0;
 }
 
 .results p {
   font-size: 23px;
+}
+
+#winnerDiv {
+  display: flex;
+  position: absolute;
+  top: -58vh;
+  flex-direction: column;
+  align-items: center;
+  height: 44vh;
+  width: 35vw;
+  border: 6px solid #af3e4d;
+  background-color: rgb(232, 229, 200);
+  transition-duration: 0.5s;
+  border-radius: 8px;
+  z-index: 3;
+}
+
+.pop {
+  position: absolute;
+  top: 130vh;
+}
+
+#winnerDiv div {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#winnerDiv p {
+  font-size: 27px;
+}
+
+#winnerDiv button {
+  height: 40px;
+  width: 60px;
+  border-radius: 8px;
+  border: 2px solid #af3e4d;
+  transition-duration: 0.3s;
+  font-size: 20px;
+}
+
+#winnerDiv button:hover {
+  background-color: #af3e4d;
+  color: rgb(232, 229, 200);
+}
+
+@keyframes slideUp {
+  from {
+    top: 150vh;
+  }
+
+  to {
+    top: 40%;
+  }
+}
+
+.shineClass {
+  animation-name: shine;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 2;
+}
+
+@keyframes shine {
+  30% {
+    color: #af3e4d;
+  }
+
+  60% {
+    color: rgb(232, 229, 200);
+  }
+
+  90% {
+    color: #a97c73;
+  }
 }

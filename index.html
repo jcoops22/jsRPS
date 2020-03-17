@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Anton&display=swap"
-      rel="stylesheet"
-    />
-    <title>JS RPS</title>
-  </head>
-  <body>
-    <h1>Javascript RPS</h1>
-    
-    <div class="container">
-      <p>Make your choice:</p>
-      <div class="btnDiv">
-        <div id="rock">
-          <img src="./resources/rock.svg" alt="rock" />
-          <span>Rock</span>
-        </div>
-        <div id="paper">
-          <img src="./resources/paper.svg" alt="paper" />
-          <span id="paperspan">Paper</span>
-        </div>
-        <div id="scissors">
-          <img src="./resources/scissors.svg" alt="scissors" />
-          <span>Scissors</span>
-        </div>
-      </div>
 
-      <div class='game-scores' id='game-scores'>
-        <div class='score'>Player</div>
-        <span class='score' id='player'>0</span> <span class='score'>:</span> 
-        <div class='score'>Terminator</div>
-        <span class='score' id='terminator'>0</span>
-        <br>
-      </div>
-      <p id='win-msg'>Who will win?</p>
+<head>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet" />
+  <title>JS RPS</title>
+</head>
+
+<body>
+  <div class="modal"></div>
+  <div id="gameStartDiv">
+    <p>What score limit do you want to go to?</p>
+    <input type="number" />
+    <button id="start">Start</button>
+  </div>
+
+  <h1>Javascript R<span>ock</span>P<span>aper</span>S<span>cissors</span></h1>
+  <div class="container">
+    <div class="scoreDiv">
+      <p>Your Score: <span id="userScore">0</span></p>
+      <p>Score Limit: <span id="scoreLimit">0</span></p>
+      <p>Computer Score: <span id="computerScore">0</span></p>
     </div>
-    <script src="logic.js"></script>
-  </body>
+    <p id="makeChoice">Make your choice:</p>
+
+    <div class="btnDiv">
+      <div id="rock">
+        <img src="./resources/rock.svg" alt="rock" />
+        <span>Rock</span>
+      </div>
+      <div id="paper">
+        <img src="./resources/paper.svg" alt="paper" />
+        <span id="paperspan">Paper</span>
+      </div>
+      <div id="scissors">
+        <img src="./resources/scissors.svg" alt="scissors" />
+        <span>Scissors</span>
+      </div>
+    </div>
+    <div class="results">
+      <div class="userResultDiv">
+        <p>You chose:</p>
+        <div class="userResult">
+          <img src="./resources/scissors.svg" alt="users choice" width="80px" />
+        </div>
+      </div>
+      <div class="computerResultDiv">
+        <p>Computer puts:</p>
+        <div class="computerResult">
+          <img src="./resources/scissors.svg" alt="computers choice" />
+        </div>
+      </div>
+    </div>
+    <div id="preview">
+      <img src="" alt="" />
+    </div>
+    <div id="winnerDiv">
+      <h1></h1>
+      <p>Play again?</p>
+      <div>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+      </div>
+    </div>
+  </div>
+  <script src="logic.js"></script>
+</body>
+
 </html>
