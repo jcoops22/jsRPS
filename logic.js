@@ -1,3 +1,4 @@
+
 let userScoreSpan = document.querySelector("#userScore");
 let computerScoreSpan = document.querySelector("#computerScore");
 let scoreLimitSpan = document.querySelector("#scoreLimit");
@@ -226,3 +227,4 @@ function reset() {
     startDivInput.focus();
   }, 600);
 }
+

@@ -2,12 +2,14 @@
   font-family: "Anton", sans-serif;
   color: #af3e4d;
 }
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(232, 229, 200);
 }
+
 h1 {
   text-align: center;
   margin-bottom: 3rem;
@@ -117,11 +119,25 @@ button {
 #computerScore {
   transition-duration: 0.7s;
 }
+
+.game-scores {
+  display: flex;
+  flex-direction: row; 
+  padding-bottom: 1rem;
+}
+
+.score {
+  padding: 0.3rem;
+}
+
 .btnDiv {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
+
+img { outline: none; }
+
 .btnDiv img {
   position: relative;
   z-index: 2;
@@ -130,15 +146,18 @@ button {
   padding: 0.7rem;
   margin: 0 2em;
 }
+
 .btnDiv img:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
+
 .btnDiv div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .btnDiv span {
   transition-duration: 0.4s;
   color: #a97c73;
@@ -152,12 +171,15 @@ button {
 #rock:hover span {
   opacity: 1;
 }
+
 #paper:hover span {
   opacity: 1;
 }
+
 #scissors:hover span {
   opacity: 1;
 }
+
 #rock,
 #paper,
 #scissors span {
@@ -172,10 +194,12 @@ button {
   position: relative;
   z-index: 1;
 }
+
 .userResultDiv,
 .computerResultDiv {
   display: flex;
 }
+
 .computerResult img {
   visibility: hidden;
   width: 100px;
@@ -183,6 +207,7 @@ button {
   transition-duration: 0.4s;
   opacity: 0;
 }
+
 .userResult img {
   width: 100px;
   margin: 20px;
@@ -190,8 +215,10 @@ button {
   transition-duration: 0.4s;
   opacity: 0;
 }
+
 .results p {
   font-size: 23px;
+
 }
 #winnerDiv {
   display: flex;
@@ -259,3 +286,4 @@ button {
     color: #a97c73;
   }
 }
+
